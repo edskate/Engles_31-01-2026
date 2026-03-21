@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painel Coreografia — EdyMichaelCover</title>
+
+<style>
+body{
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+h1{color:gold;}
+
+.container{
+background:#111;
+padding:20px;
+margin:20px auto;
+width:90%;
+max-width:700px;
+border-radius:10px;
+}
+
+select,button{
+padding:10px;
+margin:5px;
+width:90%;
+}
+
+button{
+background:gold;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+table{
+width:95%;
+margin:auto;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid gold;
+padding:8px;
+}
+
+.apto{color:#00ff88;}
+.treino{color:#ffaa00;}
+.nao{color:red;}
+</style>
+</head>
+
+<body>
+
+<h1>🎭 Painel de Coreografia</h1>
+
+<div class="container">
+
+<select id="dancarino">
+<option>Abizael</option>
+<option>Renan</option>
+<option>Patrick</option>
+<option>Jhonny Mendes</option>
+<option>Luizza Recepcionista</option>
+<option>Helama</option>
+</select>
+
+<select id="coreografia">
+    <option>Jam</option>
+<option>Dangerous</option>
+<option>Beat It</option>
+<option>Bad</option>
+<option>Thriller</option>
+
+</select>
+
+<select id="nivel">
+<option value="apto">🟢 Apto</option>
+<option value="treino">🟡 Em treino</option>
+<option value="nao">🔴 Não apto</option>
+</select>
+
+<button onclick="salvar()">Salvar Status</button>
+
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Dançarino</th>
+<th>Coreografia</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="tabela"></tbody>
+</table>
+
+<script>
+let dados = JSON.parse(localStorage.getItem("coreografia")) || [];
+
+function salvar(){
+let nome = document.getElementById("dancarino").value;
+let coreo = document.getElementById("coreografia").value;
+let nivel = document.getElementById("nivel").value;
+
+dados.push({nome, coreo, nivel});
+localStorage.setItem("coreografia", JSON.stringify(dados));
+mostrar();
+}
+
+function mostrar(){
+let tabela = document.getElementById("tabela");
+tabela.innerHTML = "";
+
+dados.forEach(d=>{
+tabela.innerHTML += `
+<tr>
+<td>${d.nome}</td>
+<td>${d.coreo}</td>
+<td class="${d.nivel}">${d.nivel.toUpperCase()}</td>
+</tr>
+`;
+});
+}
+
+mostrar();
+</script>
+
+</body>
+</html>

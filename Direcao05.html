@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Avaliação Profissional — EdyMichaelCover</title>
+
+<style>
+body{
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+h1{color:gold;}
+
+.container{
+background:#111;
+padding:20px;
+margin:20px auto;
+width:90%;
+max-width:900px;
+border-radius:10px;
+}
+
+select,input,button,textarea{
+padding:10px;
+margin:5px;
+width:90%;
+}
+
+button{
+background:gold;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+.btn-danger{background:red;color:white;}
+.btn-pdf{background:#00aa55;color:white;}
+
+table{
+width:95%;
+margin:auto;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid gold;
+padding:8px;
+}
+
+.apto{color:#00ff88;}
+.treino{color:#ffaa00;}
+.nao{color:red;}
+
+.rank1{color:gold;font-weight:bold;}
+.rank2{color:silver;}
+.rank3{color:#cd7f32;}
+
+@media print {
+button, .container {display:none;}
+body{background:white;color:black;}
+td,th{border:1px solid black;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎭 Avaliação Profissional da Equipe</h1>
+
+<div class="container">
+
+<select id="dancarino">
+<option>Abizael</option>
+<option>Renan</option>
+<option>Patrick</option>
+<option>Jhonny </option>
+<option>Luizza Recepcionista</option>
+<option>Helama</option>
+</select>
+
+<select id="coreografia">
+<option>Jam</option>
+<option>Dangerous</option>
+<option>Beat It</option>
+<option>Bad</option>
+<option>Thriller</option>
+</select>
+
+<label>🎯 Precisão (0-10)</label>
+<input type="number" id="precisao" min="0" max="10">
+
+<label>🧍 Postura (0-10)</label>
+<input type="number" id="postura" min="0" max="10">
+
+<label>⚡ Fluidez (0-10)</label>
+<input type="number" id="fluidez" min="0" max="10">
+
+<label>🔥 Energia (0-10)</label>
+<input type="number" id="energia" min="0" max="10">
+
+<textarea id="correcao" placeholder="Correções técnicas..."></textarea>
+
+<button onclick="salvar()">Salvar Avaliação</button>
+<button class="btn-danger" onclick="limpar()">🧹 Limpar</button>
+<button class="btn-pdf" onclick="gerarPDF()">📄 PDF</button>
+
+</div>
+
+<h2>🏆 Ranking da Equipe</h2>
+
+<table>
+<thead>
+<tr>
+<th>Dançarino</th>
+<th>Média</th>
+</tr>
+</thead>
+<tbody id="ranking"></tbody>
+</table>
+
+<h2>📊 Avaliações</h2>
+
+<table>
+<thead>
+<tr>
+<th>Dançarino</th>
+<th>Coreografia</th>
+<th>Nota</th>
+<th>Correção</th>
+</tr>
+</thead>
+<tbody id="tabela"></tbody>
+</table>
+
+<script>
+let dados = JSON.parse(localStorage.getItem("avaliacao")) || [];
+
+function salvar(){
+let nome = document.getElementById("dancarino").value;
+let coreo = document.getElementById("coreografia").value;
+
+let p = Number(document.getElementById("precisao").value);
+let po = Number(document.getElementById("postura").value);
+let f = Number(document.getElementById("fluidez").value);
+let e = Number(document.getElementById("energia").value);
+
+let media = ((p+po+f+e)/4).toFixed(1);
+
+let correcao = document.getElementById("correcao").value;
+
+dados.push({nome, coreo, media, correcao});
+
+localStorage.setItem("avaliacao", JSON.stringify(dados));
+
+limparCampos();
+mostrar();
+ranking();
+}
+
+function limparCampos(){
+document.getElementById("precisao").value="";
+document.getElementById("postura").value="";
+document.getElementById("fluidez").value="";
+document.getElementById("energia").value="";
+document.getElementById("correcao").value="";
+}
+
+function mostrar(){
+let tabela = document.getElementById("tabela");
+tabela.innerHTML="";
+
+dados.forEach(d=>{
+tabela.innerHTML += `
+<tr>
+<td>${d.nome}</td>
+<td>${d.coreo}</td>
+<td>${d.media}</td>
+<td>${d.correcao || "-"}</td>
+</tr>
+`;
+});
+}
+
+function ranking(){
+let map = {};
+
+dados.forEach(d=>{
+if(!map[d.nome]) map[d.nome]=[];
+map[d.nome].push(Number(d.media));
+});
+
+let resultado = [];
+
+for(let nome in map){
+let soma = map[nome].reduce((a,b)=>a+b,0);
+let media = (soma/map[nome].length).toFixed(1);
+resultado.push({nome, media});
+}
+
+resultado.sort((a,b)=>b.media-a.media);
+
+let r = document.getElementById("ranking");
+r.innerHTML="";
+
+resultado.forEach((d,i)=>{
+let classe="";
+if(i==0) classe="rank1";
+if(i==1) classe="rank2";
+if(i==2) classe="rank3";
+
+r.innerHTML += `
+<tr class="${classe}">
+<td>${i+1}º - ${d.nome}</td>
+<td>${d.media}</td>
+</tr>
+`;
+});
+}
+
+function limpar(){
+if(confirm("Apagar tudo?")){
+localStorage.removeItem("avaliacao");
+dados=[];
+mostrar();
+ranking();
+}
+}
+
+function gerarPDF(){
+window.print();
+}
+
+mostrar();
+ranking();
+</script>
+<a href="Direcao06.html">Painel Coreografia</a>
+</body>
+</html>
