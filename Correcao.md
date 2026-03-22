@@ -83,6 +83,8 @@
 - Questionar direção na hora errada
 - Estar despreparado
 - Falta de foco
+- sair descalço no salão (OBS)
+- Subir as escadas descalço(OBS)
 - Falta de respeito ao projeto
 ---
 
