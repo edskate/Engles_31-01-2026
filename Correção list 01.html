@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"","children":[{"content":"Corre&#xe7;&#xe3;o.","children":[],"payload":{"tag":"h1","lines":"0,1"}},{"content":"PRIMEIRAS TAREFAS DO DAN&#xc7;ARINO AO CHEGAR","children":[{"content":"01","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"","children":[{"content":"Chegar no hor&#xe1;rio definido (ou antes)","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"Cumprimentar equipe e dire&#xe7;&#xe3;o","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"Estar 100% dispon&#xed;vel mentalmente (sem distra&#xe7;&#xf5;es)","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"&#x1f449; Aqui j&#xe1; come&#xe7;a a avalia&#xe7;&#xe3;o do dan&#xe7;arino.","children":[],"payload":{"tag":"li","lines":"9,10"}}],"payload":{"tag":"ul","lines":"6,10"}}],"payload":{"tag":"h1","lines":"1,2"}},{"content":"&#x1f455; 2. ORGANIZA&#xc7;&#xc3;O PESSOAL","children":[{"content":"2","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"","children":[{"content":"Guardar mochila / objetos pessoais","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"Separar figurino corretamente","children":[],"payload":{"tag":"li","lines":"19,20"}}],"payload":{"tag":"ul","lines":"18,20"}},{"content":"","children":[{"content":"Conferir:","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"Roupa completa","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"Sapato","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"Acess&#xf3;rios","children":[],"payload":{"tag":"li","lines":"26,27"}}],"payload":{"tag":"ul","lines":"23,27"}}],"payload":{"tag":"h1","lines":"13,14"}},{"content":"&#x1f6a8; Nada de figurino jogado ou bagun&#xe7;a.","children":[{"content":"&#x1f3ad; 3. CHECAGEM DE FIGURINO","children":[],"payload":{"tag":"li","lines":"35,36"}},{"content":"Verificar se est&#xe1;:","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Limpo","children":[],"payload":{"tag":"li","lines":"37,38"}},{"content":"Completo","children":[],"payload":{"tag":"li","lines":"38,39"}},{"content":"Ajustar antes do show (n&#xe3;o em cima da hora)","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"&#x1f449; Evita atraso e problema no palco.","children":[],"payload":{"tag":"li","lines":"40,41"}}],"payload":{"tag":"h1","lines":"30,31"}},{"content":"4. FOCO E POSTURA","children":[{"content":"Nada de:","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"Celular excessivo","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"Conversa desnecess&#xe1;ria","children":[],"payload":{"tag":"li","lines":"47,48"}},{"content":"Reclama&#xe7;&#xf5;es","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"&#x2714; Entrar no modo show","children":[],"payload":{"tag":"li","lines":"49,50"}}],"payload":{"tag":"h1","lines":"42,43"}},{"content":"&#x1f57a; 5. AQUECIMENTO","children":[{"content":"Alongamento leve","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"Ativa&#xe7;&#xe3;o corporal","children":[],"payload":{"tag":"li","lines":"56,57"}},{"content":"Revis&#xe3;o de base (tempo, postura, marca&#xe7;&#xe3;o)","children":[],"payload":{"tag":"li","lines":"57,58"}},{"content":"&#x1f449; Corpo pronto = menos erro no palco","children":[],"payload":{"tag":"li","lines":"58,59"}}],"payload":{"tag":"h1","lines":"52,53"}},{"content":"&#x1f3b6; 6. REVIS&#xc3;O DE COREOGRAFIA","children":[{"content":"Relembrar entradas e sa&#xed;das","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"Marca&#xe7;&#xe3;o de palco (OBS)","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"Ajustes r&#xe1;pidos com o artista (se necess&#xe1;rio)","children":[],"payload":{"tag":"li","lines":"65,66"}},{"content":"&#x1f6a8; N&#xe3;o &#xe9; hora de inventar nada","children":[],"payload":{"tag":"li","lines":"66,67"}}],"payload":{"tag":"h1","lines":"61,62"}},{"content":"&#x1f3af; 7. ALINHAMENTO FINAL","children":[{"content":"Ouvir dire&#xe7;&#xe3;o do artista (OBS)","children":[],"payload":{"tag":"li","lines":"71,72"}},{"content":"Ordem do show","children":[],"payload":{"tag":"li","lines":"72,73"}},{"content":"Entradas","children":[],"payload":{"tag":"li","lines":"73,74"}},{"content":"Trocas","children":[],"payload":{"tag":"li","lines":"74,75"}},{"content":"&#x1f449; &#xda;ltimo momento de organiza&#xe7;&#xe3;o","children":[],"payload":{"tag":"li","lines":"75,76"}}],"payload":{"tag":"h1","lines":"69,70"}},{"content":"&#x1f6ab; 8. O QUE N&#xc3;O PODE ACONTECER","children":[{"content":"Chegar atrasado","children":[],"payload":{"tag":"li","lines":"81,82"}},{"content":"Questionar dire&#xe7;&#xe3;o na hora errada","children":[],"payload":{"tag":"li","lines":"82,83"}},{"content":"Estar despreparado","children":[],"payload":{"tag":"li","lines":"83,84"}},{"content":"Falta de foco","children":[],"payload":{"tag":"li","lines":"84,85"}},{"content":"sair descal&#xe7;o no sal&#xe3;o (OBS)","children":[],"payload":{"tag":"li","lines":"85,86"}},{"content":"Subir as escadas descal&#xe7;o(OBS)","children":[],"payload":{"tag":"li","lines":"86,87"}},{"content":"Falta de respeito ao projeto","children":[],"payload":{"tag":"li","lines":"87,88"}}],"payload":{"tag":"h1","lines":"78,79"}},{"content":"&#x1f449; Chegar &#x2192; Organizar &#x2192; Preparar &#x2192; Focar &#x2192; Executar","children":[],"payload":{"tag":"h1","lines":"90,91"}}]},{})</script>
+</body>
+</html>
