@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open index07.html",
+            "file": "c:\\Users\\EDY\\Documents\\GitHub\\Engles_31-01-2026\\Engles_31-01-2026\\index07.html"
+        }
+    ]
+}
