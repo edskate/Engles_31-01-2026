@@ -1,4 +1,5 @@
 {
     "liveServer.settings.port": 5501,
-    "commentTranslate.targetLanguage": "en"
+    "commentTranslate.targetLanguage": "en",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
