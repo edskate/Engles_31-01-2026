@@ -301,16 +301,30 @@
                         {
                             "sessionInfo": {
                                 "id": "c42afa7a-686f-4e57-9070-cbe85eea44a6",
-                                "duration": 1368678,
-                                "idle": 1794561,
+                                "duration": 1375999,
+                                "idle": 13494641,
                                 "state": "Idle",
                                 "durations": [
+                                    {
+                                        "id": "99ea263e-de5c-4985-9823-13f2ec8ee59d",
+                                        "state": "Idle",
+                                        "begin": 1786297931740,
+                                        "end": 1786297931740,
+                                        "duration": 0
+                                    },
+                                    {
+                                        "id": "b6fe2e46-11a2-4ad4-8e31-f9382c1223b0",
+                                        "state": "Ongoing",
+                                        "begin": 1786297924419,
+                                        "end": 1786297931740,
+                                        "duration": 7321
+                                    },
                                     {
                                         "id": "68596da2-dfc3-4dd3-9436-7f96c8fe31b2",
                                         "state": "Idle",
                                         "begin": 1786297747042,
-                                        "end": 1786297747042,
-                                        "duration": 0
+                                        "end": 1786297924419,
+                                        "duration": 177377
                                     },
                                     {
                                         "id": "88785ca4-c073-435e-b285-fa0a4aacfb37",
