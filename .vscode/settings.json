@@ -3,6 +3,7 @@
     "commentTranslate.targetLanguage": "en",
     "python-envs.defaultEnvManager": "ms-python.python:venv",
     "cSpell.words": [
+        "responsibility",
         "vida"
     ]
 }
