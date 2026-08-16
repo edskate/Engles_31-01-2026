@@ -24,7 +24,9 @@
     },
     "data": [
         {
-            "config": false,
+            "config": {
+                "showIdle": false
+            },
             "user": "edskate",
             "dailySessions": [
                 {
@@ -1575,7 +1577,7 @@
                                 "id": "4c4f1b80-348c-477a-80b9-5eaee8364351",
                                 "duration": 150331,
                                 "idle": 440064,
-                                "state": "Idle",
+                                "state": "Ended",
                                 "durations": [
                                     {
                                         "id": "91cc0a11-cd1b-4a4f-b7f7-a2ca8623b93a",
@@ -1607,6 +1609,35 @@
                                     }
                                 ],
                                 "filesExt": [
+                                    ".html"
+                                ]
+                            },
+                            "actionType": "Idle"
+                        },
+                        {
+                            "sessionInfo": {
+                                "id": "7eb1b28a-53c5-4f67-8f89-9b7c03a2a456",
+                                "duration": 110383,
+                                "idle": 4378827,
+                                "state": "Idle",
+                                "durations": [
+                                    {
+                                        "id": "e7cc6906-d6e7-4fbf-957c-d80f92bf254b",
+                                        "state": "Idle",
+                                        "begin": 1786758124371,
+                                        "end": 1786758124371,
+                                        "duration": 0
+                                    },
+                                    {
+                                        "id": "aacdbe09-383a-477d-9af8-1e62fe94b438",
+                                        "state": "Ongoing",
+                                        "begin": 1786758013988,
+                                        "end": 1786758124371,
+                                        "duration": 110383
+                                    }
+                                ],
+                                "filesExt": [
+                                    ".vscode-chat-customizations-evaluations-#1-Chat Customizations Evaluations",
                                     ".html"
                                 ]
                             },
